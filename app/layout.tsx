@@ -40,7 +40,7 @@ export default function RootLayout({
       className={cn(fontSans.variable, nunito.variable, lato.variable)}
     >
       <body className="min-h-screen bg-background font-sans antialiased">
-        <TailwindIndicator />
+        {children}
       </body>
     </html>
   )

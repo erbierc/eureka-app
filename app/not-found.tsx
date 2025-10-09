@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 interface NotFoundProps {
@@ -30,11 +29,10 @@ export default function NotFound({
         {description}
       </p>
       <div className="mt-10 mx-auto">
-        <Button asChild>
+        <button>
           <Link href="/">Take me home</Link>
-        </Button>
+        </button>
       </div>
     </div>
   )
 }
-
