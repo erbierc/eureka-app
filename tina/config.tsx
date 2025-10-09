@@ -4,7 +4,6 @@ import { Eureka } from "./collection/eureka"
 import { Label } from "./collection/label"
 import { Style } from "./collection/style"
 import { Color } from "./collection/color"
-import { EurekaPiece } from "./collection/eurekaPiece"
 
 const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -31,7 +30,7 @@ const config = defineConfig({
     basePath: nextConfig.basePath?.replace(/^\//, "") || "", // The base path of the app (could be /blog)
   },
   schema: {
-    collections: [Label, Style, Eureka, Color, EurekaPiece],
+    collections: [Label, Style, Eureka, Color],
   },
 })
 

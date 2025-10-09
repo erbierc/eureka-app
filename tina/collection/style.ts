@@ -12,5 +12,11 @@ export const Style: Collection = {
       name: "name",
       required: true,
     },
+    {
+      type: "image",
+      label: "Image",
+      name: "image",
+      required: true,
+    },
   ],
 }
