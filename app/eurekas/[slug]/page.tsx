@@ -20,8 +20,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
       {eureka.style?.image && (
         <Image src={eureka.style.image} alt="" width={155} height={50} />
       )}
-      {eureka.label?.image && (
+      {eureka.label?.image ? (
         <Image src={eureka.label.image} alt="" width={155} height={50} />
+      ) : (
+        <p>{eureka.label?.name}</p>
       )}
 
       <div>
