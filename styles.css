@@ -44,7 +44,7 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: #161925;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -118,3 +118,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+th div span {
+  text-align: center;
+}
+
+th > div {
+  display: flex;
+  span {
+    flex-grow: 1;
+  }
+}
+
+th,
+td {
+  padding: 0.25rem 0.5rem;
+}
+
+.eureka-container {
+  padding: 0;
+  table {
+    width: 100%;
+  }
+}
+
+tr {
+  border-bottom: 1px solid #f2bed1;
+  :last-child {
+    border-bottom: none;
+  }
+}
+
+tr:nth-child(even) {
+  background-color: #f8e8ee;
+}
+
+tr:nth-child(odd) {
+  background-color: #f9f5f6;
+}
+
+/* table table tr:nth-child(even) {
+  background-color: #fdcedf;
+} */

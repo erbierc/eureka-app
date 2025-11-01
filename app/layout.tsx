@@ -1,24 +1,13 @@
 import { ReactNode } from "react"
 import { Metadata } from "next"
-import { Inter as FontSans, Lato, Nunito } from "next/font/google"
+import { Roboto } from "next/font/google"
 import { cn } from "@/lib/utils"
 import "@/styles.css"
 import QueryProvider from "@/components/providers/QueryProvider"
 
-const fontSans = FontSans({
+const fontRoboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-const nunito = Nunito({
-  subsets: ["latin"],
-  variable: "--font-nunito",
-})
-
-const lato = Lato({
-  subsets: ["latin"],
-  variable: "--font-lato",
-  weight: "400",
+  variable: "--font-roboto",
 })
 
 export const metadata: Metadata = {
@@ -28,10 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={cn(fontSans.variable, nunito.variable, lato.variable)}
-    >
+    <html lang="en" className={cn(fontRoboto.variable)}>
       <body className="min-h-screen bg-background font-sans antialiased">
         <QueryProvider>{children}</QueryProvider>
       </body>

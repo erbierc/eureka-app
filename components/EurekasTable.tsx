@@ -16,6 +16,7 @@ import { useFilters } from "@/hooks/useFilters"
 import { Eureka } from "./Eureka"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import Image from "next/image"
+import { Descriptor } from "./Descriptor"
 
 export default function EurekasTable() {
   const { filters, setFilters } = useFilters()
@@ -56,20 +57,7 @@ export default function EurekasTable() {
         header: "Style",
         cell: (info: any) => {
           const style = info.getValue()
-          return (
-            <div>
-              {style.image ? (
-                <Image
-                  src={style.image}
-                  alt={style.name}
-                  width={100}
-                  height={30}
-                />
-              ) : (
-                <span>{style.name}</span>
-              )}
-            </div>
-          )
+          return <Descriptor image={style.image} name={style.name} />
         },
         sortingFn: sortByName,
       },
@@ -78,20 +66,7 @@ export default function EurekasTable() {
         header: "Label",
         cell: (info: any) => {
           const label = info.getValue()
-          return (
-            <div>
-              {label.image ? (
-                <Image
-                  src={label.image}
-                  alt={label.name}
-                  width={100}
-                  height={30}
-                />
-              ) : (
-                <span>{label.name}</span>
-              )}
-            </div>
-          )
+          return <Descriptor image={label.image} name={label.name} />
         },
         sortingFn: sortByName,
       },
@@ -141,11 +116,15 @@ export default function EurekasTable() {
                       cursor: h.column.getCanSort() ? "pointer" : "default",
                     }}
                   >
-                    {flexRender(h.column.columnDef.header, h.getContext())}
-                    {{
-                      asc: <ChevronUp />,
-                      desc: <ChevronDown />,
-                    }[h.column.getIsSorted() as string] ?? null}
+                    <div>
+                      <span>
+                        {flexRender(h.column.columnDef.header, h.getContext())}
+                      </span>
+                      {{
+                        asc: <ChevronUp />,
+                        desc: <ChevronDown />,
+                      }[h.column.getIsSorted() as string] ?? null}
+                    </div>
                   </th>
                 ))}
               </tr>
@@ -166,7 +145,7 @@ export default function EurekasTable() {
                 </tr>
                 {row.getIsExpanded() && (
                   <tr>
-                    <td colSpan={columns.length}>
+                    <td className="eureka-container" colSpan={columns.length}>
                       <Eureka {...row.original} />
                     </td>
                   </tr>
