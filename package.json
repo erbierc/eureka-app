@@ -2,12 +2,13 @@
   "name": "eureka-app",
   "version": "0.0.1",
   "private": true,
+  "packageManager": "pnpm@10.18.3",
   "scripts": {
     "dev": "tinacms dev -c \"next dev --turbopack\"",
     "build": "tinacms build && next build",
     "build-local": "tinacms build --local --skip-indexing --skip-cloud-checks && next build",
     "start": "tinacms build && next start",
-    "export": "npm run build && next export",
+    "export": "pnpm run build && next export",
     "lint": "biome lint",
     "dev:build": "next build",
     "prepare": "husky"
@@ -31,6 +32,7 @@
     "@tanstack/react-query": "^5.90.3",
     "@tanstack/react-query-devtools": "^5.90.2",
     "@tanstack/react-table": "^8.21.3",
+    "lucide-react": "^0.545.0",
     "next": "15.3.0",
     "query-string": "^9.3.1",
     "react": "^18.3.1",
