@@ -57,7 +57,9 @@ export default function EurekasTable() {
         header: "Style",
         cell: (info: any) => {
           const style = info.getValue()
-          return <Descriptor image={style.image} name={style.name} />
+          return (
+            <Descriptor image={style.image} name={style.name} mobileDisplay />
+          )
         },
         sortingFn: sortByName,
       },
@@ -115,6 +117,11 @@ export default function EurekasTable() {
                     style={{
                       cursor: h.column.getCanSort() ? "pointer" : "default",
                     }}
+                    className={`${
+                      h.column.columnDef.header === "Label"
+                        ? "hidden md:table-cell"
+                        : ""
+                    }`}
                   >
                     <div>
                       <span>

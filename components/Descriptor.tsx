@@ -4,11 +4,17 @@ type DescriptorProps = {
   image: string | undefined
   name: string
   height?: number
+  mobileDisplay?: boolean
 }
 
-export const Descriptor = ({ image, name, height = 30 }: DescriptorProps) => {
+export const Descriptor = ({
+  image,
+  name,
+  height = 30,
+  mobileDisplay = false,
+}: DescriptorProps) => {
   return (
-    <div>
+    <div className={`${!mobileDisplay && "hidden md:block"}`}>
       {image ? (
         <Image
           src={image}

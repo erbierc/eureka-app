@@ -43,7 +43,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #f9f5f6;
   --foreground: #161925;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -120,7 +120,7 @@
 }
 
 th div span {
-  text-align: center;
+  text-align: left;
 }
 
 th > div {
@@ -157,6 +157,9 @@ tr:nth-child(odd) {
   background-color: #f9f5f6;
 }
 
+table {
+  width: 100%;
+}
 /* table table tr:nth-child(even) {
   background-color: #fdcedf;
 } */

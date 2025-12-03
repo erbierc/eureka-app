@@ -4,6 +4,7 @@ import { Roboto } from "next/font/google"
 import { cn } from "@/lib/utils"
 import "@/styles.css"
 import QueryProvider from "@/components/providers/QueryProvider"
+import BaseLayout from "@/components/layout/BaseLayout"
 
 const fontRoboto = Roboto({
   subsets: ["latin"],
@@ -19,7 +20,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={cn(fontRoboto.variable)}>
       <body className="min-h-screen bg-background font-sans antialiased">
-        <QueryProvider>{children}</QueryProvider>
+        <QueryProvider>
+          <BaseLayout>{children}</BaseLayout>
+        </QueryProvider>
       </body>
     </html>
   )
